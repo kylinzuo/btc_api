@@ -7,8 +7,8 @@ const loggerHttp = log4js.getLogger('http');
 
 log4js.configure({
   appenders: {
-    http: { type: 'dateFile', filename: 'logs/access/date', "alwaysIncludePattern": true, pattern: '-yyyy-MM-dd.log' },
-    error: { type: 'file', filename: 'logs/errors/error.log', maxLogSize: 20480 }
+    http: { type: 'dateFile', filename: 'logs/access/res', "alwaysIncludePattern": true, pattern: '-yyyy-MM-dd.log' },
+    error: { type: 'dateFile', filename: 'logs/errors/err', "alwaysIncludePattern": true, pattern: '-yyyy-MM.log' }
   },
   categories: {
     default: { appenders: ['error'], level: 'error' },
