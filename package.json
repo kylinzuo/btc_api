@@ -1,0 +1,28 @@
+{
+  "name": "tc_api",
+  "version": "1.0.0",
+  "description": "tokenclub api",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --use_strict bin/www.js",
+    "start": "pm2 start bin/www.js"
+  },
+  "keywords": [
+    "tokenclub",
+    "api"
+  ],
+  "author": "kylinzuo",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4",
+    "log4js": "^2.8.0"
+  },
+  "devDependencies": {
+    "pm2": "^2.10.4"
+  }
+}
