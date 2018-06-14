@@ -1,8 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const json = require('koa-json');
+const bodyParser = require('koa-bodyparser');
+const staticServe = require('koa-static');
 const Koa = require('koa');
 const router = require('../src/router.js');
 const logUtil = require('../config/log_config.js');
+const sequelizeMysql = require('../src/mysql/sequelize.js');
 
 const app = new Koa();
 
@@ -14,6 +18,9 @@ app.use(async (ctx, next) => {
     logUtil.logError(ctx, error)
   }
 })
+app.use(bodyParser());
+app.use(json());
+app.use(staticServe(path.resolve(__dirname, '../static')));
 app.use(router());
 
 app.on('error', err => {
